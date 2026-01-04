@@ -1,0 +1,21 @@
+{
+    "name": "GRIT Protocol - Artist OS",
+    "short_name": "GRIT",
+    "description": "The operating system for the independent artist economy.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#9333ea",
+    "icons": [
+        {
+            "src": "/grit_logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/grit_logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

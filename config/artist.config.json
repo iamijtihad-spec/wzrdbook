@@ -1,0 +1,72 @@
+{
+    "discord_guild_id": "1449490560640614461",
+    "discord_channels": {
+        "sovereign": "CHANNEL_ID_HERE",
+        "ascesis": "CHANNEL_ID_HERE",
+        "heritage": "CHANNEL_ID_HERE",
+        "glitch": "CHANNEL_ID_HERE"
+    },
+    "artist": {
+        "name": "WzrdBook",
+        "symbol": "WZRD",
+        "curation_ethos": "Silence is the only true sound.",
+        "links": {
+            "physical_bridge": "nfc://chip-id-001",
+            "resonance_hub": "https://discord.gg/wzrd"
+        }
+    },
+    "aesthetic_dna": {
+        "palette": {
+            "sovereign": "#00f2ff",
+            "ascesis": "#ff1a1a",
+            "heritage": "#ffc400",
+            "glitch": "#39ff14"
+        },
+        "textures": {
+            "grain_intensity": 0.04,
+            "fluid_viscosity": 1.2,
+            "shadow_depth": "deep"
+        },
+        "typography": {
+            "primary": "EB Garamond",
+            "secondary": "JetBrains Mono"
+        }
+    },
+    "collection": [
+        {
+            "id": "sonnet-001",
+            "title": "The Weight of Air",
+            "stems": [
+                {
+                    "name": "vocals",
+                    "url": "",
+                    "domain": "sovereign"
+                },
+                {
+                    "name": "bass",
+                    "url": "",
+                    "domain": "heritage"
+                },
+                {
+                    "name": "atmosphere",
+                    "url": "",
+                    "domain": "ascesis"
+                }
+            ],
+            "domain_gates": {
+                "vocals": "sovereign",
+                "bass": "heritage",
+                "atmosphere": "ascesis"
+            }
+        },
+        {
+            "id": "wzrd-crush",
+            "title": "CRUSH",
+            "stem_vox1": "/music/CRUSH%20TRACKOUT/WZRDCRUSH_vox1.wav",
+            "stem_inout": "/music/CRUSH%20TRACKOUT/WZRDCRUSH_in_out1.wav",
+            "stem_adlibs": "/music/CRUSH%20TRACKOUT/WZRDCRUSH_adlibs.wav",
+            "stem_bgvox": "/music/CRUSH%20TRACKOUT/WZRDCRUSH_in_out2.wav",
+            "stem_inst": "/music/CRUSH%20TRACKOUT/WZRDCRUSH_instrumental.wav"
+        }
+    ]
+}

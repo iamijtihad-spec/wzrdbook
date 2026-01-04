@@ -1,0 +1,35 @@
+{
+  "name": "ACTUALLY ACTUALLY",
+  "symbol": "WZRD",
+  "description": "A vibrant, mirror-world inspired track from the GRITCOIN collection.",
+  "image": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/actually-actually_cd.png",
+  "animation_url": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/ACTUALLY%20ACTUALLY.wav",
+  "external_url": "https://gritcoin-dashboard.vercel.app",
+  "attributes": [
+    {
+      "trait_type": "Genre",
+      "value": "Hip Hop"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Energetic"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/actually-actually_cd.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/ACTUALLY%20ACTUALLY.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

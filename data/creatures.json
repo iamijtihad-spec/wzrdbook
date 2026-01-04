@@ -1,0 +1,95 @@
+{
+  "creatures": {
+    "SOUL_1765228408699_bpmkj": {
+      "mint": "SOUL_1765228408699_bpmkj",
+      "name": "Capricorn Soul",
+      "image": "/images/egg_generic.png",
+      "element": "Earth",
+      "zodiac": "Capricorn",
+      "stats": {
+        "attack": 25,
+        "defense": 10,
+        "speed": 10,
+        "wisdom": 10
+      },
+      "state": {
+        "stage": "Baby",
+        "level": 6,
+        "xp": 278,
+        "xpToNextLevel": 378,
+        "hunger": 100,
+        "happiness": 100,
+        "energy": 0,
+        "lastInteraction": 1765233586382,
+        "stamina": 10,
+        "sleepiness": null,
+        "lastFed": 1765233582205,
+        "sleepState": "sleeping",
+        "lastSlept": 1765233586382
+      }
+    },
+    "SOUL_1765228653987_ina4v": {
+      "mint": "SOUL_1765228653987_ina4v",
+      "name": "Leo Soul",
+      "image": "/images/egg_generic.png",
+      "element": "Fire",
+      "zodiac": "Leo",
+      "stats": {
+        "attack": 19,
+        "defense": 10,
+        "speed": 10,
+        "wisdom": 10
+      },
+      "state": {
+        "stage": "Baby",
+        "level": 5,
+        "xp": 100,
+        "xpToNextLevel": 252,
+        "hunger": 100,
+        "happiness": 100,
+        "energy": 40,
+        "lastInteraction": 1765233769068,
+        "stamina": 20,
+        "sleepiness": null,
+        "lastFed": 1765233769068,
+        "sleepState": "sleeping",
+        "lastSlept": 1765233652407
+      }
+    },
+    "SOUL_1765232907861_qztlh": {
+      "mint": "SOUL_1765232907861_qztlh",
+      "name": "Leo Soul",
+      "image": "/images/egg_generic.png",
+      "element": "Fire",
+      "zodiac": "Leo",
+      "stats": {
+        "attack": 25,
+        "defense": 10,
+        "speed": 10,
+        "wisdom": 10
+      },
+      "state": {
+        "stage": "Baby",
+        "level": 5,
+        "xp": 140,
+        "xpToNextLevel": 252,
+        "hunger": 100,
+        "happiness": 100,
+        "energy": 100,
+        "lastInteraction": 1765233744595,
+        "stamina": 10,
+        "sleepiness": null,
+        "lastFed": 1765233730075,
+        "sleepState": "sleeping",
+        "lastSlept": 1765233744595
+      }
+    }
+  },
+  "userCreatures": {
+    "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr": [
+      "SOUL_1765228408699_bpmkj",
+      "SOUL_1765228653987_ina4v",
+      "SOUL_1765232907861_qztlh"
+    ]
+  }
+}

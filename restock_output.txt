@@ -1,0 +1,44 @@
+💰 Treasury: 7tPex3v45MN42hD6m9vHgSKvkEqtE2XpmigLWLMctST7
+----------------------------------------
+
+🎵 Processing: ACTUALLY ACTUALLY
+✨ Mint Created: 8sHJPXVKH7ugDChcGGtYhj7shA2fiCUzf2J4EPPV89TC
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+🎵 Processing: CRUSH
+✨ Mint Created: 2uyMxQiPHWa7YjgrRdWfCU1rHgBiZq5J94WeZxxhPbrc
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+🎵 Processing: SEPTA
+✨ Mint Created: B3UZaYYxzAigYVRjDUdFAkdiWoYmkNpbjwoC9DNtwhNM
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+🎵 Processing: TV
+✨ Mint Created: 5vu5rXzzBDhNwrQ3nTvhuX6iLSK1xsQ4KF6xMDQJNGif
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+🎵 Processing: VILLIAN STRUT
+✨ Mint Created: FZFVbjwUXDvy9JvRML2KqH9JvnfG9gwyt3s9NMvrccuY
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+🎵 Processing: WZRD
+✨ Mint Created: BubfTLJ6QcuppBt4xQKjqXx1WPGWGsR5GKKjTyV9B3RT
+✅ Minted 1 token to treasury
+✅ Metadata attached
+
+----------------------------------------
+🎉 All NFTs Restocked & Metadata Attached!
+👉 UPDATE YOUR CODE WITH THESE MINTS:
+{
+  "ACTUALLY ACTUALLY": "8sHJPXVKH7ugDChcGGtYhj7shA2fiCUzf2J4EPPV89TC",
+  "CRUSH": "2uyMxQiPHWa7YjgrRdWfCU1rHgBiZq5J94WeZxxhPbrc",
+  "SEPTA": "B3UZaYYxzAigYVRjDUdFAkdiWoYmkNpbjwoC9DNtwhNM",
+  "TV": "5vu5rXzzBDhNwrQ3nTvhuX6iLSK1xsQ4KF6xMDQJNGif",
+  "VILLIAN STRUT": "FZFVbjwUXDvy9JvRML2KqH9JvnfG9gwyt3s9NMvrccuY",
+  "WZRD": "BubfTLJ6QcuppBt4xQKjqXx1WPGWGsR5GKKjTyV9B3RT"
+}

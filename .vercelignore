@@ -1,0 +1,15 @@
+test-ledger
+grit-programs
+scripts
+target
+node_modules
+.next
+out
+.git
+dist
+ios
+music_uploads
+*.mp3
+*.wav
+*.mp4
+electron

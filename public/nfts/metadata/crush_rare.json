@@ -1,0 +1,43 @@
+{
+  "name": "CRUSH - Rare Edition",
+  "symbol": "WZRD",
+  "description": "High energy track with intense vibes. Rare Tier NFT. Unlocks exclusive music content.",
+  "seller_fee_basis_points": 500,
+  "image": "crush_rare.png",
+  "external_url": "https://grit-music.vercel.app",
+  "attributes": [
+    {
+      "trait_type": "Tier",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Character",
+      "value": "Bull"
+    },
+    {
+      "trait_type": "Accent",
+      "value": "Joker"
+    },
+    {
+      "trait_type": "GRIT Required",
+      "value": 1000
+    },
+    {
+      "trait_type": "Access",
+      "value": "Full Track"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "crush_rare.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "CRUSH.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

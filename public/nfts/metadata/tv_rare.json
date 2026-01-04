@@ -1,0 +1,39 @@
+{
+  "name": "TV",
+  "symbol": "WZRD",
+  "description": "TV - Exclusive GRITCOIN Music NFT",
+  "image": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/tv_rare.png",
+  "animation_url": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/music/TV.wav",
+  "external_url": "https://gritcoin.io",
+  "attributes": [
+    {
+      "trait_type": "Artist",
+      "value": "GRITCOIN"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Music"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Price",
+      "value": "100 GRIT"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/tv_rare.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/music/TV.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "SEPTA",
+  "symbol": "WZRD",
+  "description": "SEPTA - Exclusive GRITCOIN Music NFT",
+  "image": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/septa_legendary.png",
+  "animation_url": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/music/SEPTA.wav",
+  "external_url": "https://gritcoin.io",
+  "attributes": [
+    {
+      "trait_type": "Artist",
+      "value": "GRITCOIN"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Music"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Price",
+      "value": "1000 GRIT"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/septa_legendary.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/music/SEPTA.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

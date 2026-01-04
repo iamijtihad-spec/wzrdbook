@@ -1,0 +1,35 @@
+{
+  "name": "SEPTA",
+  "symbol": "WZRD",
+  "description": "A gritty, transit-themed track capturing the urban commute.",
+  "image": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/septa_cd.png",
+  "animation_url": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/SEPTA.wav",
+  "external_url": "https://gritcoin-dashboard.vercel.app",
+  "attributes": [
+    {
+      "trait_type": "Genre",
+      "value": "Hip Hop"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Urban"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/septa_cd.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/SEPTA.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

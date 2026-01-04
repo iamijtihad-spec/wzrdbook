@@ -1,0 +1,22 @@
+[
+  {
+    "account_id": 1766450074407,
+    "provider": "wallet",
+    "identifier": "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr"
+  },
+  {
+    "account_id": 1766450074407,
+    "provider": "discord",
+    "identifier": "1449489400688939060"
+  },
+  {
+    "account_id": 1767372806753,
+    "provider": "wallet",
+    "identifier": "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr"
+  },
+  {
+    "account_id": 1767372806753,
+    "provider": "discord",
+    "identifier": "1449489400688939060"
+  }
+]

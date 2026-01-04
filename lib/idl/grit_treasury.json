@@ -1,0 +1,127 @@
+{
+    "version": "0.1.0",
+    "name": "grit_treasury",
+    "instructions": [
+        {
+            "name": "initialize",
+            "accounts": [
+                {
+                    "name": "authority",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "treasuryState",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "lungMint",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "lungAccount",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "rent",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "lungCap",
+                    "type": "u64"
+                },
+                {
+                    "name": "epochDuration",
+                    "type": "i64"
+                }
+            ]
+        },
+        {
+            "name": "requestWithdrawal",
+            "accounts": [
+                {
+                    "name": "user",
+                    "isMut": true,
+                    "isSigner": true
+                },
+                {
+                    "name": "treasuryState",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "lungAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "userTokenAccount",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "mint",
+                    "isMut": true,
+                    "isSigner": false
+                },
+                {
+                    "name": "tokenProgram",
+                    "isMut": false,
+                    "isSigner": false
+                },
+                {
+                    "name": "systemProgram",
+                    "isMut": false,
+                    "isSigner": false
+                }
+            ],
+            "args": [
+                {
+                    "name": "amountSol",
+                    "type": "u64"
+                }
+            ]
+        }
+    ],
+    "accounts": [
+        {
+            "name": "TreasuryState",
+            "type": {
+                "kind": "struct",
+                "fields": [
+                    {
+                        "name": "authority",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "lungMint",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "lungAccount",
+                        "type": "publicKey"
+                    },
+                    {
+                        "name": "lungCap",
+                        "type": "u64"
+                    },
+                    {
+                        "name": "epochDuration",
+                        "type": "i64"
+                    }
+                ]
+            }
+        }
+    ]
+}

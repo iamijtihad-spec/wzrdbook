@@ -1,0 +1,98 @@
+{
+  "rings": [
+    {
+      "id": "ring-1",
+      "name": "Ring I: The Arcanum",
+      "description": "The Inner Ring. Home of WZRDCLVB.",
+      "tokenGate": "token",
+      "tokenAmount": 1,
+      "roleGate": "none",
+      "content": [
+        {
+          "title": "CRUISE SHIP",
+          "artist": "enki",
+          "duration": "3:47",
+          "fileUrl": "/uploads/mz3lsnz7m75xheewtad5202tp.wav",
+          "type": "audio",
+          "uploadedAt": 1765756422607
+        },
+        {
+          "id": "1765977701147",
+          "title": "cruise ship",
+          "artist": "enki",
+          "duration": "3:47",
+          "fileUrl": "https://pub-ec5864865d7a404287c6846067709dba.r2.dev/rings/ring-1/zrfs1sy43ka4m4p4z3ytabwly.wav",
+          "type": "audio",
+          "uploadedAt": 1765977701147
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "ring-2",
+      "name": "Ring II: The Nebula",
+      "description": "A swirling cloud of potential.",
+      "tokenGate": "CHI",
+      "tokenAmount": 100,
+      "roleGate": "Silver",
+      "content": [
+        {
+          "title": "WAZE",
+          "artist": "WZRDBLVK",
+          "duration": "2:55"
+        }
+      ],
+      "status": "locked"
+    },
+    {
+      "id": "ring-3",
+      "name": "Ring III: The Obsidian",
+      "description": "Dark matter and hidden frequencies.",
+      "tokenGate": "GRIT",
+      "tokenAmount": 250,
+      "roleGate": "Gold",
+      "content": [],
+      "status": "locked"
+    },
+    {
+      "id": "ring-4",
+      "name": "Ring IV: The Helix",
+      "description": "Evolutionary soundscapes.",
+      "tokenGate": "MOXY",
+      "tokenAmount": 500,
+      "roleGate": "Platinum",
+      "content": [],
+      "status": "locked"
+    },
+    {
+      "id": "ring-5",
+      "name": "Ring V: The Meridian",
+      "description": "Where light meets sound.",
+      "tokenGate": "CHI",
+      "tokenAmount": 1000,
+      "roleGate": "Gold",
+      "content": [],
+      "status": "locked"
+    },
+    {
+      "id": "ring-6",
+      "name": "Ring VI: The Aether",
+      "description": "Pure energy.",
+      "tokenGate": "GRIT",
+      "tokenAmount": 2500,
+      "roleGate": "Diamond",
+      "content": [],
+      "status": "locked"
+    },
+    {
+      "id": "ring-7",
+      "name": "Ring VII: The Horizon",
+      "description": "The edge of the known universe.",
+      "tokenGate": "MOXY",
+      "tokenAmount": 5000,
+      "roleGate": "Titan",
+      "content": [],
+      "status": "locked"
+    }
+  ]
+}

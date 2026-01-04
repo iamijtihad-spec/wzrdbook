@@ -1,0 +1,25 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+grit_bonding = "8N8qeFRcxnwJKn2mWvhMahP2S3ChfPwynRtVKAvPepY1"
+grit_staking = "G9Xq99jdwuvQD1nGGhW1C3TYuc6iRz78faoscQqmX2D7"
+grit_gov = "AotidXSUcQsaQHbkwwrrnCX9MiMYhu9JimPA2LJ2VSxj"
+
+[programs.devnet]
+grit_bonding = "8N8qeFRcxnwJKn2mWvhMahP2S3ChfPwynRtVKAvPepY1"
+grit_staking = "G9Xq99jdwuvQD1nGGhW1C3TYuc6iRz78faoscQqmX2D7"
+grit_gov = "AotidXSUcQsaQHbkwwrrnCX9MiMYhu9JimPA2LJ2VSxj"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"

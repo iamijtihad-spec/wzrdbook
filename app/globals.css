@@ -1,26 +1,228 @@
 @import "tailwindcss";
 
+
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Default: SOVEREIGN (The Liquid Root) */
+  --domain-bg: #050505;
+  --domain-panel: rgba(20, 20, 20, 0.7);
+  --domain-accent: #00f2ff;
+  /* Cyan */
+  --domain-accent-muted: rgba(0, 242, 255, 0.15);
+  --domain-text-primary: #ffffff;
+  --domain-text-muted: #a0a0a0;
+  --domain-border: rgba(255, 255, 255, 0.1);
+  --domain-font: 'Space Grotesk', sans-serif;
+  --domain-glow: 0 0 20px rgba(0, 242, 255, 0.3);
+  --glitch-display: none;
+  --grain-opacity: 0.03;
+
+  --void-black: #010101;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-domain="ascesis"] {
+  /* ASCESIS (The Sacrifice) */
+  --domain-bg: #000000;
+  --domain-panel: #0a0a0a;
+  --domain-accent: #ff1a1a;
+  /* Deep Red */
+  --domain-accent-muted: rgba(255, 26, 26, 0.05);
+  --domain-text-primary: #e5e5e5;
+  --domain-text-muted: #444444;
+  --domain-border: #1a1a1a;
+  --domain-font: 'EB Garamond', serif;
+  /* Brutalist/Ancient */
+  --domain-glow: 0 0 40px rgba(255, 26, 26, 0.1);
+  --glitch-display: none;
+  --grain-opacity: 0.1;
+  /* Heavier texture */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-domain="heritage"] {
+  /* HERITAGE (The Archive) */
+  --domain-bg: #0a0904;
+  --domain-panel: rgba(28, 26, 15, 0.8);
+  --domain-accent: #ffc400;
+  /* Golden Amber */
+  --domain-accent-muted: rgba(255, 196, 0, 0.1);
+  --domain-text-primary: #fff9e6;
+  --domain-text-muted: #8a815e;
+  --domain-border: rgba(255, 196, 0, 0.2);
+  --domain-font: 'Inter', sans-serif;
+  --domain-glow: 0 0 30px rgba(255, 196, 0, 0.15);
+  --glitch-display: none;
+  --grain-opacity: 0.05;
+}
+
+[data-domain="market"] {
+  /* MARKET (The Exchange) */
+  --domain-bg: #0a0f0a;
+  --domain-panel: rgba(10, 20, 15, 0.8);
+  --domain-accent: #34d399;
+  /* Emerald */
+  --domain-accent-muted: rgba(52, 211, 153, 0.1);
+  --domain-text-primary: #ecfdf5;
+  --domain-text-muted: #6ee7b7;
+  --domain-border: rgba(52, 211, 153, 0.2);
+  --domain-font: 'JetBrains Mono', monospace;
+  --domain-glow: 0 0 25px rgba(52, 211, 153, 0.2);
+  --glitch-display: none;
+  --grain-opacity: 0.04;
+}
+
+[data-domain="glitch"] {
+  /* GLITCH (The Performance) */
+  --domain-bg: #020d02;
+  --domain-panel: rgba(0, 20, 0, 0.9);
+  --domain-accent: #39ff14;
+  /* Neon Green */
+  --domain-accent-muted: rgba(57, 255, 20, 0.2);
+  --domain-text-primary: #39ff14;
+  --domain-text-muted: #1b5e20;
+  --domain-border: #39ff14;
+  --domain-font: 'JetBrains Mono', monospace;
+  --domain-glow: 0 0 10px rgba(57, 255, 20, 0.5);
+  --glitch-display: block;
+  --grain-opacity: 0.2;
+}
+
+
+@theme {
+  --color-background: var(--domain-bg);
+  --color-foreground: var(--domain-text-primary);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--domain-bg);
+  color: var(--domain-text-primary);
+  font-family: var(--domain-font);
+  cursor: none !important;
+  /* Custom Cursor Override */
+  overflow-x: hidden;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+/* Restore cursor on mobile/touch */
+@media (max-width: 768px) {
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Sentient Light Leak that follows the mouse */
+.void-light {
+  position: fixed;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, var(--domain-accent-muted) 0%, transparent 70%);
+  top: var(--mouse-y, 50%);
+  left: var(--mouse-x, 50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+  transition: background 1.5s ease;
+}
+
+/* Texture overlay for all domains */
+.void-grain {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: var(--grain-opacity);
+  pointer-events: none;
+  z-index: 99;
+  mix-blend-mode: overlay;
+}
+
+/* Global Utility for the "Glass" */
+.glass-panel {
+  background: var(--domain-panel);
+  border: 1px solid var(--domain-border);
+  backdrop-filter: blur(12px);
+  border-radius: 4px;
+  box-shadow: var(--domain-glow);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Glitch Overrides */
+[data-domain="glitch"]::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 100;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+@keyframes glitch-flicker {
+  0% {
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  10% {
+    opacity: 0.8;
+    transform: translate(-2px, 1px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translate(2px, -1px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+[data-domain="glitch"] .void-light {
+  animation: glitch-flicker 0.1s infinite;
+}
+
+
+/* Mobile Performance & Touch Optimizations */
+@media (max-width: 768px) {
+  :root {
+    /* Slightly lower blur for performance to maintain framerate */
+    --domain-blur-mobile: 10px;
+    /* Static grain instead of SVG noise if desired, or just lower opacity */
+    --grain-opacity: 0.05;
+  }
+
+  .void-container {
+    height: 100vh;
+    height: 100dvh;
+    /* Dynamic Viewport Height for mobile browsers */
+    overflow: hidden;
+    touch-action: none;
+    /* Prevent browser defaults */
+  }
+
+  /* Vertical Breath Meter for Mobile Rituals */
+  .mobile-breath-meter {
+    position: absolute;
+    right: 8px;
+    top: 20%;
+    bottom: 20%;
+    width: 3px;
+    border-radius: 99px;
+    background: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .mobile-breath-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, var(--domain-accent, #00ffff), transparent);
+    transition: height 0.1s linear;
+  }
 }

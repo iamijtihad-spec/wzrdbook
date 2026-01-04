@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local
+secrets/
+dist/
+test-ledger/
+grit-programs/target/
+music_uploads/
+.open-next/
+.wrangler/

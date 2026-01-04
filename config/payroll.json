@@ -1,0 +1,31 @@
+{
+    "payroll": [
+        {
+            "id": "PAY-001",
+            "recipient": "WZRD (Principal Architect)",
+            "role": "Founder",
+            "amount": "14400",
+            "token": "MOXY",
+            "status": "Active",
+            "frequency": "Monthly"
+        },
+        {
+            "id": "PAY-002",
+            "recipient": "Community Treasury",
+            "role": "DAO",
+            "amount": "50000",
+            "token": "CHI",
+            "status": "Active",
+            "frequency": "Weekly"
+        },
+        {
+            "id": "PAY-003",
+            "recipient": "Saturn Bot (Keeper)",
+            "role": "Automation",
+            "amount": "1000",
+            "token": "GRIT",
+            "status": "Active",
+            "frequency": "Daily"
+        }
+    ]
+}

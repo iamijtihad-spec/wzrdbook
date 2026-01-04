@@ -1,0 +1,125 @@
+{
+  "tracks": [
+    {
+      "title": "ACTUALLY ACTUALLY",
+      "mint": "E5skQTTe9XGx8fPsgZZwc5xJsQ1FhYoH5UqpUQ6scJ9g",
+      "price": 5,
+      "rarity": "Common",
+      "metadataFile": "actually_actually_common.json",
+      "imageFile": "actually-actually_cd.png",
+      "audioFile": "ACTUALLY ACTUALLY.wav",
+      "symbol": "WZRD",
+      "supply": 1000
+    },
+    {
+      "title": "ACTUALLY ACTUALLY",
+      "mint": "Fb6jUHTmbCnT7YiZfRsQtucxDj8KngSnmFCqJHHe9uRF",
+      "price": 100,
+      "rarity": "Rare",
+      "metadataFile": "actually_actually_rare.json",
+      "imageFile": "actually_actually_rare.png",
+      "audioFile": "ACTUALLY ACTUALLY.wav",
+      "symbol": "WZRD",
+      "supply": 50
+    },
+    {
+      "title": "ACTUALLY ACTUALLY",
+      "mint": "CGvtQwsDmJaRyYmQNpXS4J2KhQkLTRGA3phB9XWjm7Rd",
+      "price": 500,
+      "rarity": "Epic",
+      "metadataFile": "actually_actually_epic.json",
+      "imageFile": "actually_actually_epic.png",
+      "audioFile": "ACTUALLY ACTUALLY.wav",
+      "symbol": "WZRD",
+      "supply": 10
+    },
+    {
+      "title": "ACTUALLY ACTUALLY",
+      "mint": "FFwdi8mNv6p6qizs6cJ9GTGTa9ccd9hWSgHZhNAqE8Vz",
+      "price": 1000,
+      "rarity": "Legendary",
+      "metadataFile": "actually_actually_legendary.json",
+      "imageFile": "actually_actually_legendary.png",
+      "audioFile": "ACTUALLY ACTUALLY.wav",
+      "symbol": "WZRD",
+      "supply": 5
+    },
+    {
+      "title": "SEPTA",
+      "mint": "DzCoeVz3riPJjvE19Jn9UnqvgC3WcbhrunpYTqXpqoFQ",
+      "price": 5,
+      "rarity": "Common",
+      "metadataFile": "septa_common.json",
+      "imageFile": "septa_cd.png",
+      "audioFile": "SEPTA.wav",
+      "symbol": "WZRD",
+      "supply": 1000
+    },
+    {
+      "title": "SEPTA",
+      "mint": "FpNiLTWnLsU1Rg6T3pyEydZC9xMfy7oezH16i87LSM9x",
+      "price": 100,
+      "rarity": "Rare",
+      "metadataFile": "septa_rare.json",
+      "imageFile": "septa_rare.png",
+      "audioFile": "SEPTA.wav",
+      "symbol": "WZRD",
+      "supply": 50
+    },
+    {
+      "title": "SEPTA",
+      "mint": "8YnYwv6K3bP2do3DgAMQi6hJmWXBhoppuvuqdB3WBbV9",
+      "price": 500,
+      "rarity": "Epic",
+      "metadataFile": "septa_epic.json",
+      "imageFile": "septa_epic.png",
+      "audioFile": "SEPTA.wav",
+      "symbol": "WZRD",
+      "supply": 10
+    },
+    {
+      "title": "CRUSH",
+      "mint": "F8v3PYV8QL3yQLxP8y9ekFhBXkGWfwDSa3PpZdGMnxo",
+      "price": 1000,
+      "rarity": "Legendary",
+      "metadataFile": "crush_legendary.json",
+      "imageFile": "crush_legendary.png",
+      "audioFile": "CRUSH.wav",
+      "symbol": "WZRD",
+      "supply": 5
+    },
+    {
+      "title": "TV",
+      "mint": "BmvFFuqjwy7rcYpgXGxdiBdXwcj8UsuDBhgQq28VeB4L",
+      "price": 5,
+      "rarity": "Common",
+      "metadataFile": "tv_common.json",
+      "imageFile": "tv_cd.png",
+      "audioFile": "TV.wav",
+      "symbol": "WZRD",
+      "supply": 1000
+    },
+    {
+      "title": "WZRD",
+      "mint": "89MMyzLimu4n5agynjgVQFdvTyP53iHzUxyv1LvAJVW5",
+      "price": 1000,
+      "rarity": "Legendary",
+      "metadataFile": "wzrd_legendary.json",
+      "imageFile": "wzrd_legendary.png",
+      "audioFile": "WZRD.wav",
+      "symbol": "WZRD",
+      "supply": 5
+    },
+    {
+      "title": "TOUR TICKET 2025",
+      "mint": "GrTfDDmiqvVTq11nAMai2bfMPD3CwjjC6CXnsRfG2c8K",
+      "price": 2500,
+      "rarity": "Item",
+      "metadataFile": "tour_ticket_2025.json",
+      "imageFile": "tour_ticket.png",
+      "audioFile": "",
+      "symbol": "TICKET",
+      "supply": 500
+    }
+  ]
+}

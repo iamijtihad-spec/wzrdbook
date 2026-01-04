@@ -1,0 +1,27 @@
+{
+    "skus": {
+        "SKU_GRIT_SMALL": {
+            "id": "123456789012345678",
+            "name": "Small GRIT Pack",
+            "type": "CONSUMABLE",
+            "rewardType": "TOKEN",
+            "token": "GRIT",
+            "amount": 100
+        },
+        "SKU_GRIT_LARGE": {
+            "id": "876543210987654321",
+            "name": "Large GRIT Pack",
+            "type": "CONSUMABLE",
+            "rewardType": "TOKEN",
+            "token": "GRIT",
+            "amount": 1000
+        },
+        "SKU_OPERATOR_ROLE": {
+            "id": "112233445566778899",
+            "name": "Operator Clearance",
+            "type": "DURABLE",
+            "rewardType": "ROLE",
+            "roleName": "Operator"
+        }
+    }
+}

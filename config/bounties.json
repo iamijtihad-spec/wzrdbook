@@ -1,0 +1,72 @@
+{
+    "weekly": [
+        {
+            "id": "vote_council",
+            "title": "Council Consensus",
+            "description": "Vote on at least 1 ecosystem proposal this week.",
+            "reward": "50 CHI",
+            "actionLink": "/governance",
+            "icon": "Vote"
+        },
+        {
+            "id": "stake_moxy",
+            "title": "Diamond Hands",
+            "description": "Maintain your Staking Tier for 7 consecutive days.",
+            "reward": "100 CHI",
+            "actionLink": "/bonding",
+            "icon": "Shield"
+        },
+        {
+            "id": "discord_active",
+            "title": "Town Square",
+            "description": "Post 5 messages in the #general or #governance channels.",
+            "reward": "25 CHI",
+            "actionLink": "https://discord.gg/grit-ecosystem",
+            "icon": "MessageCircle"
+        }
+    ],
+    "social": [
+        {
+            "id": "twitter_follow",
+            "title": "The Signal",
+            "description": "Follow @GritEcosystem on X.com for realtime alerts.",
+            "reward": "200 CHI",
+            "actionLink": "https://twitter.com/GritEcosystem",
+            "icon": "Twitter"
+        },
+        {
+            "id": "tiktok_create",
+            "title": "Viral Vector",
+            "description": "Create a TikTok using the 'Grit Anthem' sound. Tag #GritDAO.",
+            "reward": "500 CHI",
+            "actionLink": "https://tiktok.com/tag/GritDAO",
+            "icon": "Video"
+        },
+        {
+            "id": "invite_friend",
+            "title": "Expansion Protocol",
+            "description": "Invite a new user who verifies their wallet.",
+            "reward": "300 CHI",
+            "actionLink": "/invite",
+            "icon": "UserPlus"
+        }
+    ],
+    "discovery": [
+        {
+            "id": "find_whitepaper",
+            "title": "Forbidden Knowledge",
+            "description": "Locate and read the 'Hidden Manifesto' in the Museum.",
+            "reward": "150 CHI",
+            "actionLink": "/museum",
+            "icon": "Scroll"
+        },
+        {
+            "id": "play_album",
+            "title": "Sonic Tuner",
+            "description": "Listen to the full 'Saturn Nucleus' album start to finish.",
+            "reward": "100 CHI",
+            "actionLink": "/",
+            "icon": "Headphones"
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+  "votes": {
+    "1-0": 120,
+    "1-1": 340,
+    "1-2": 210,
+    "1-3": 90,
+    "2-0": 500,
+    "2-1": 120,
+    "2-2": 300
+  },
+  "stakedBalances": {
+    "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr": 1100
+  },
+  "bondingCurve": {
+    "supply": 1000,
+    "basePrice": 0.1,
+    "slope": 0.001
+  },
+  "bounties": {
+    "1765753497921ktsqtp": {
+      "id": "1765753497921ktsqtp",
+      "wallet": "8v...TEST_WALLET",
+      "link": "https://tiktok.com/@grit/video/123456",
+      "platform": "tiktok",
+      "status": "approved",
+      "timestamp": 1765753497921,
+      "reward": 10
+    }
+  },
+  "userBalances": {
+    "8v...TEST_WALLET": 20
+  }
+}

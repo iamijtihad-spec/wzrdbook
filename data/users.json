@@ -1,0 +1,21 @@
+{
+  "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr": {
+    "wallet": "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr",
+    "resonance": 3194.3999999998355,
+    "scars": [
+      {
+        "signature": "5sYw7hPwMT8DWBLaq7zbDQ7weFcuVec1GDeF3cEAiKewkZwwCYLfQxTiLkKkgazgGrHBeLYCYeukufpnjYXkW49G",
+        "amount": 250,
+        "timestamp": 1767372989071
+      },
+      {
+        "signature": "4LTYjY6JiksqkNh3xNfiLqr6VLC1njBP1CudEQ8akX2JSW9W3FqBRK9GoYryiukWMGMNm9SVouEUoztdagavSuRn",
+        "amount": 100,
+        "timestamp": 1767372939500
+      }
+    ],
+    "history": [],
+    "lastActive": 1767375925676,
+    "currentDomain": "ASCESIS"
+  }
+}

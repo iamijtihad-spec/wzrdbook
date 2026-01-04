@@ -1,0 +1,24 @@
+💰 Treasury: 7tPex3v45MN42hD6m9vHgSKvkEqtE2XpmigLWLMctST7
+----------------------------------------
+
+📦 Creating Collection Parent NFT...
+StructError: Expected the value to satisfy a union of `type | type`, but received: [object Object]
+    at validate (/Users/wzrdbook/.gemini/antigravity/scratch/solana-token-ecosystem/grit-dashboard/node_modules/superstruct/dist/index.cjs:298:27)
+    at Object.create (/Users/wzrdbook/.gemini/antigravity/scratch/solana-token-ecosystem/grit-dashboard/node_modules/superstruct/dist/index.cjs:263:24)
+    at Connection.getMinimumBalanceForRentExemption (/Users/wzrdbook/.gemini/antigravity/scratch/solana-token-ecosystem/grit-dashboard/node_modules/@solana/web3.js/lib/index.cjs.js:7111:29)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5) {
+  value: {
+    jsonrpc: '2.0',
+    error: {
+      code: -32000,
+      message: 'Unauthorized: You must authenticate your request with an API key. Create an account on https://www.ankr.com/rpc/ and generate your personal API key for free.'
+    },
+    id: null
+  },
+  type: 'union',
+  refinement: undefined,
+  key: undefined,
+  path: [],
+  branch: [ { jsonrpc: '2.0', error: [Object], id: null } ],
+  failures: [Function (anonymous)]
+}

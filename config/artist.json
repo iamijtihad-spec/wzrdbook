@@ -1,0 +1,29 @@
+{
+    "name": "WZRDCLVB",
+    "description": "Exclusive token-gated music and art.",
+    "tokenName": "GRIT",
+    "tokenSymbol": "GRIT",
+    "rewardsTokenName": "CHI",
+    "rewardsTokenSymbol": "CHI",
+    "rewardsTokenMint": "5Z5YkiXqBQyVaz8dhrM2DCDynnmNkaFa7AZDoHchQtEj",
+    "colors": {
+        "primary": "purple",
+        "secondary": "blue",
+        "accent": "pink"
+    },
+    "socials": {
+        "twitter": "https://twitter.com/wzrd",
+        "instagram": "https://instagram.com/wzrd",
+        "tiktok": "https://tiktok.com/@wzrd"
+    },
+    "features": {
+        "museum": true,
+        "live": true,
+        "merch": true,
+        "bounties": true,
+        "governance": true,
+        "bonding": true,
+        "staking": true,
+        "rewards": true
+    }
+}

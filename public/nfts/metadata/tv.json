@@ -1,0 +1,35 @@
+{
+  "name": "TV",
+  "symbol": "WZRD",
+  "description": "A retro-futuristic track inspired by screen culture and static.",
+  "image": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/tv_cd.png",
+  "animation_url": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/TV.wav",
+  "external_url": "https://gritcoin-dashboard.vercel.app",
+  "attributes": [
+    {
+      "trait_type": "Genre",
+      "value": "Electronic"
+    },
+    {
+      "trait_type": "Mood",
+      "value": "Retro"
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    }
+  ],
+  "properties": {
+    "files": [
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/images/tv_cd.png",
+        "type": "image/png"
+      },
+      {
+        "uri": "https://pub-1aa7bb22d4509ba4b29cfc9418424695.r2.dev/tracks/TV.wav",
+        "type": "audio/wav"
+      }
+    ],
+    "category": "audio"
+  }
+}

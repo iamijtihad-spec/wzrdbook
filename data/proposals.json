@@ -1,0 +1,51 @@
+[
+    {
+        "id": "PROP-001",
+        "title": "Initiate The Great Filter",
+        "description": "Increase the Ascesis Burn Requirement by 50% to purify the collective. Only those with true conviction should remain.",
+        "deadline": 1735161600000,
+        "resonance": {
+            "amplify": 12500,
+            "dampen": 4500
+        },
+        "status": "Active",
+        "domain": "ASCESIS"
+    },
+    {
+        "id": "PROP-002",
+        "title": "Expand Heritage Yield",
+        "description": "Allocate 10% of the Treasury inflow to the Heritage staking pool for the next epoch.",
+        "deadline": 1735507200000,
+        "resonance": {
+            "amplify": 89000,
+            "dampen": 1200
+        },
+        "status": "Active",
+        "domain": "HERITAGE"
+    },
+    {
+        "id": "PROP-003",
+        "title": "Sovereign Independence",
+        "description": "Sever the Discord verification requirement for the Sovereign domain. True sovereignty requires no external validation.",
+        "deadline": 1734816000000,
+        "resonance": {
+            "amplify": 5000,
+            "dampen": 55000
+        },
+        "status": "Rejected",
+        "domain": "SOVEREIGN"
+    }
+  {
+        "id": "prop-mix-test-01",
+        "title": "Dampen Adlibs (Test)",
+        "description": "Reduce the texture layer (Adlibs) to focus on the narrative.",
+        "proposer": "System",
+        "startTime": 1765985000000,
+        "endTime": 1799999999999,
+        "resonance": {
+            "amplify": 100,
+            "dampen": 5000
+        },
+        "status": "Active"
+    }
+]

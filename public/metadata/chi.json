@@ -1,0 +1,25 @@
+{
+    "name": "CHI",
+    "symbol": "CHI",
+    "description": "The Life Force of the WZRD Ecosystem. Earned by engagement, spent on rewards.",
+    "image": "https://grit-dashboard.vercel.app/icons/chi.svg",
+    "attributes": [
+        {
+            "trait_type": "Type",
+            "value": "Utility Token"
+        },
+        {
+            "trait_type": "Role",
+            "value": "Rewards"
+        }
+    ],
+    "properties": {
+        "files": [
+            {
+                "uri": "https://grit-dashboard.vercel.app/icons/chi.svg",
+                "type": "image/svg+xml"
+            }
+        ],
+        "category": "image"
+    }
+}

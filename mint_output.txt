@@ -1,0 +1,6 @@
+💰 Treasury: 7tPex3v45MN42hD6m9vHgSKvkEqtE2XpmigLWLMctST7
+Creating new NFT mint...
+✨ New Mint Address: 4wzVoZXBTwaFXgv2tGAdbbTFhUKdCFDttByLashZarPh
+Minting 1 token to treasury...
+✅ Treasury restocked with 1 NFT!
+👉 UPDATE YOUR CODE WITH THIS MINT ADDRESS: 4wzVoZXBTwaFXgv2tGAdbbTFhUKdCFDttByLashZarPh
