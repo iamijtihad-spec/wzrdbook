@@ -21,13 +21,13 @@ async function main() {
         {
             name: "MOXY",
             symbol: "MXY",
-            uri: "https://grit-dashboard.vercel.app/metadata/moxy.json",
+            uri: "https://wzrdbook.com/metadata/moxy.json",
             mint: new PublicKey("2FFhBNoCqsgXejrqQXk3gJXWyG9nuiE7qj4Sv2wrcnwq")
         },
         {
             name: "CHI",
             symbol: "CHI",
-            uri: "https://grit-dashboard.vercel.app/metadata/chi.json",
+            uri: "https://wzrdbook.com/metadata/chi.json",
             mint: new PublicKey("5Z5YkiXqBQyVaz8dhrM2DCDynnmNkaFa7AZDoHchQtEj")
         }
     ];

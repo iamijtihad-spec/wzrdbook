@@ -1,9 +1,9 @@
 
 import fetch from 'node-fetch';
 
-const BOT_TOKEN = "MTQ0OTQ5MDk1MzI1NjU2NjgzNw.GtlTuj.hJME9r-4-hLV1gL3kYp5wEbIWnse0waqJSBqog";
+const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || "";
 const GUILD_ID = "1449490560640614461";
-const DASHBOARD_URL = "https://grit-dashboard.vercel.app"; // Or localhost if testing
+const DASHBOARD_URL = "https://wzrdbook.com"; // Or localhost if testing
 
 async function sendMessage(channelId, content, embeds = []) {
     if (!channelId) return;
