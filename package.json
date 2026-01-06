@@ -14,7 +14,7 @@
     "discord:seed": "npx tsx scripts/discord/seed-channels.ts",
     "bot:grit": "npx tsx scripts/discord/GritBot.ts",
     "bot:deploy": "npx tsx scripts/discord/deploy-commands.ts",
-    "pages:build": "npx open-next-build"
+    "pages:build": "npx opennextjs-cloudflare"
   },
   "main": "electron/main.js",
   "build": {
