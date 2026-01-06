@@ -4,18 +4,28 @@
     "resonance": 3194.3999999998355,
     "scars": [
       {
-        "signature": "5sYw7hPwMT8DWBLaq7zbDQ7weFcuVec1GDeF3cEAiKewkZwwCYLfQxTiLkKkgazgGrHBeLYCYeukufpnjYXkW49G",
-        "amount": 250,
-        "timestamp": 1767372989071
+        "signature": "5M6MYga89wSKFnDpQnYJ4kjn2td91jM5qQqXyEqradYXjcgSWR9YsMF9jFtpyFuArm2bnL77U5dKTSwHSb4HAwAV",
+        "amount": 100,
+        "timestamp": 1765955276036
       },
       {
-        "signature": "4LTYjY6JiksqkNh3xNfiLqr6VLC1njBP1CudEQ8akX2JSW9W3FqBRK9GoYryiukWMGMNm9SVouEUoztdagavSuRn",
+        "signature": "MXpfn4FtZQPjhA8a3P3mkTj4DF9cSJyoC6jDpPe3imfFdfky26N4KcvUjUsRpWoMcPHUgLFosT4Q7jHsFNeC8Bd",
+        "amount": 11,
+        "timestamp": 1765943244691
+      },
+      {
+        "signature": "2piGn3UGueHjAXdiT9JtQ3kWangMxsvDsTEHa5RUPGNWvpVATC1TNk88Ky1Nr3tEH9ejNWq2e8ShesmsxkVp7Cyd",
+        "amount": 10,
+        "timestamp": 1765943078951
+      },
+      {
+        "signature": "2GNprtCSt4S2tNN5sgceEjDDaeKvgbV2RZXEmy34rHwJZw1ww54DaUoKfXnndYX9h7535RrbH4nNteAqTYLH7Suj",
         "amount": 100,
-        "timestamp": 1767372939500
+        "timestamp": 1765932345019
       }
     ],
     "history": [],
-    "lastActive": 1767375925676,
+    "lastActive": 1767714583242,
     "currentDomain": "ASCESIS"
   }
 }

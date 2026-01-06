@@ -1,11 +1,30 @@
 
+// @ts-ignore
 import fetch from 'node-fetch';
 
 const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || "";
 const GUILD_ID = "1449490560640614461";
 const DASHBOARD_URL = "https://wzrdbook.com"; // Or localhost if testing
 
-async function sendMessage(channelId, content, embeds = []) {
+interface EmbedField {
+    name: string;
+    value: string;
+    inline?: boolean;
+}
+
+interface EmbedImage {
+    url: string;
+}
+
+interface Embed {
+    title?: string;
+    description?: string;
+    color?: number;
+    fields?: EmbedField[];
+    image?: EmbedImage;
+}
+
+async function sendMessage(channelId: string, content: string, embeds: Embed[] = []) {
     if (!channelId) return;
     console.log(`Sending to ${channelId}...`);
     await fetch(`https://discord.com/api/channels/${channelId}/messages`, {
@@ -23,10 +42,10 @@ async function populate() {
     const res = await fetch(`https://discord.com/api/guilds/${GUILD_ID}/channels`, {
         headers: { Authorization: `Bot ${BOT_TOKEN}` }
     });
-    const channels = await res.json();
+    const channels: any[] = await res.json();
 
     // Helper to find channel by name
-    const findCh = (name) => channels.find(c => c.name.includes(name))?.id;
+    const findCh = (name: string) => channels.find((c: any) => c.name.includes(name))?.id;
 
     const welcomeId = findCh("welcome");
     const announcementsId = findCh("announcements");
