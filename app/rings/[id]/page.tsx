@@ -14,6 +14,8 @@ import { useConnection } from "@solana/wallet-adapter-react";
 import { initiateAscesisRingAdvance } from "@/lib/actions/ascesis";
 import { Flame } from "lucide-react";
 
+export const runtime = 'edge';
+
 export default function RingPage() {
     const params = useParams();
     const ringId = params?.id;
