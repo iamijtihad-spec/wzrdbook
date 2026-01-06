@@ -97,3 +97,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: "Request processed failed" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

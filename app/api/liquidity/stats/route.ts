@@ -25,3 +25,6 @@ export async function GET() {
         return NextResponse.json({ error: "Failed to fetch liquidity stats" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

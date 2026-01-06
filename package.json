@@ -14,7 +14,7 @@
     "discord:seed": "npx tsx scripts/discord/seed-channels.ts",
     "bot:grit": "npx tsx scripts/discord/GritBot.ts",
     "bot:deploy": "npx tsx scripts/discord/deploy-commands.ts",
-    "pages:build": "npx @cloudflare/next-on-pages"
+    "pages:build": "npx open-next-build"
   },
   "main": "electron/main.js",
   "build": {
@@ -83,6 +83,7 @@
   },
   "devDependencies": {
     "@capacitor/ios": "^8.0.0",
+    "@opennextjs/cloudflare": "^1.14.8",
     "@tailwindcss/postcss": "^4",
     "@types/chai": "^5.2.3",
     "@types/formidable": "^3.4.6",

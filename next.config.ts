@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
-import path from "path";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+
+initOpenNextCloudflareForDev();
 
 const nextConfig: NextConfig = {
     eslint: {
@@ -8,10 +10,6 @@ const nextConfig: NextConfig = {
     typescript: {
         ignoreBuildErrors: true,
     },
-    // turbopack: {
-    // },
-    // output: 'standalone',
-    // outputFileTracingRoot: path.join(__dirname, '../'),
     images: {
         remotePatterns: [
             {
@@ -39,7 +37,6 @@ const nextConfig: NextConfig = {
             ...config.resolve.alias,
             "@solana/web3.js": require.resolve("@solana/web3.js"),
         };
-        // Fix for discord.js peer dependencies in Next.js (Global)
         config.resolve.fallback = {
             ...config.resolve.fallback,
             "zlib-sync": false,

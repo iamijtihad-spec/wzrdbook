@@ -87,3 +87,6 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ success: false, error: e.message || "Mint failed" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

@@ -150,3 +150,6 @@ Recipient ATA: ${recipientATA.toBase58()}
         }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

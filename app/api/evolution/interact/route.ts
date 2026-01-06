@@ -94,3 +94,6 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ success: false, error: e.message || "Interaction failed" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

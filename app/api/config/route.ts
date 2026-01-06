@@ -14,3 +14,6 @@ export async function GET() {
         return NextResponse.json({ error: "Failed to load configuration" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

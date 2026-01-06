@@ -46,3 +46,6 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Verification Failed" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';

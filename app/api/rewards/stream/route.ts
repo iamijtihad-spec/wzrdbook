@@ -115,3 +115,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ error: error.message || "Reward failed" }, { status: 500 });
     }
 }
+
+
+export const runtime = 'edge';
