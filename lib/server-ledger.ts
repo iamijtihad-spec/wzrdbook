@@ -1,9 +1,9 @@
 
-import fs from "fs";
-import path from "path";
+// import fs from "fs";
+// import path from "path";
 import { D1Client } from "./d1";
 
-const LEDGER_FILE = path.join(process.cwd(), "data", "ledger.json");
+// const LEDGER_FILE = path.join(process.cwd(), "data", "ledger.json");
 
 // Define Activity Type
 export interface LedgerEntry {
@@ -19,9 +19,9 @@ export interface LedgerEntry {
 }
 
 // Ensure data directory exists
-if (!fs.existsSync(path.dirname(LEDGER_FILE))) {
-    fs.mkdirSync(path.dirname(LEDGER_FILE), { recursive: true });
-}
+// if (!fs.existsSync(path.dirname(LEDGER_FILE))) {
+//     fs.mkdirSync(path.dirname(LEDGER_FILE), { recursive: true });
+// }
 
 export const ServerLedger = {
     /**
@@ -57,17 +57,19 @@ export const ServerLedger = {
         }
 
         // 2. Local Fallback
-        try {
-            const currentChain = ServerLedger.readSync();
-            const newEntry: LedgerEntry = { id, timestamp, ...entry };
-            currentChain.unshift(newEntry);
-            const trimmed = currentChain.slice(0, 1000);
-            fs.writeFileSync(LEDGER_FILE, JSON.stringify(trimmed, null, 2));
-            return newEntry;
-        } catch (e) {
-            console.error("Ledger Write Error:", e);
-            return null;
-        }
+        // try {
+        //     const currentChain = ServerLedger.readSync();
+        //     const newEntry: LedgerEntry = { id, timestamp, ...entry };
+        //     currentChain.unshift(newEntry);
+        //     const trimmed = currentChain.slice(0, 1000);
+        //     fs.writeFileSync(LEDGER_FILE, JSON.stringify(trimmed, null, 2));
+        //     return newEntry;
+        // } catch (e) {
+        //     console.error("Ledger Write Error:", e);
+        //     return null;
+        // }
+        console.warn("Ledger log write disabled in Edge Runtime");
+        return null;
     },
 
     /**
@@ -95,14 +97,16 @@ export const ServerLedger = {
      * Legacy Sync Read (For non-async contexts or local files)
      */
     readSync: (): LedgerEntry[] => {
-        if (!fs.existsSync(LEDGER_FILE)) return [];
-        try {
-            const data = fs.readFileSync(LEDGER_FILE, "utf-8");
-            return JSON.parse(data);
-        } catch (e) {
-            console.error("Ledger Read Error:", e);
-            return [];
-        }
+        // if (!fs.existsSync(LEDGER_FILE)) return [];
+        // try {
+        //     const data = fs.readFileSync(LEDGER_FILE, "utf-8");
+        //     return JSON.parse(data);
+        // } catch (e) {
+        //     console.error("Ledger Read Error:", e);
+        //     return [];
+        // }
+        console.warn("Ledger readSync disabled in Edge Runtime");
+        return [];
     },
 
     /**

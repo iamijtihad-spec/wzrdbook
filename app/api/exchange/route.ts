@@ -7,7 +7,7 @@ import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, cre
 const RECIPIENT_WALLET = "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr";
 const GRIT_MINT = process.env.GRIT_MINT || "CS8ZQMdJ5t5hNuM51LXJBU4zBysZWAkFj9oJ6MwtnHsS";
 const EXCHANGE_RATE = 1000; // 1 SOL = 1000 GRIT
-const LEDGER_PATH = path.join(process.cwd(), "src/data/ledger.json");
+// const LEDGER_PATH = path.join(process.cwd(), "src/data/ledger.json");
 
 export async function POST(request: NextRequest) {
     try {

@@ -1,6 +1,5 @@
-
-import dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
+// import dotenv from 'dotenv';
+// dotenv.config({ path: '.env.local' });
 
 const BOT_TOKEN = process.env.DISCORD_BOT_TOKEN || "MTQ0OTQ5MDk1MzI1NjU2NjgzNw.GtlTuj.hJME9r-4-hLV1gL3kYp5wEbIWnse0waqJSBqog";
 const GUILD_ID = process.env.DISCORD_GUILD_ID || "1449490560640614461";
@@ -106,6 +105,7 @@ export async function setup() {
 }
 
 // Only run if called directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-    setup();
-}
+// Only run if called directly
+// if (import.meta.url === `file://${process.argv[1]}`) {
+//     setup();
+// }

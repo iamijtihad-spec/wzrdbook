@@ -1,0 +1,34 @@
+
+> grit-dashboard@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.9
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.1s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+ReferenceError: path is not defined
+    at <unknown> (.next/server/app/api/exchange/route.js:1)
+    at 84341 (.next/server/app/api/exchange/route.js:1:5346)
+    at c (.next/server/edge-runtime-webpack.js:1:143)
+    at <unknown> (.next/server/app/api/exchange/route.js:1:15968)
+    at c.O (.next/server/edge-runtime-webpack.js:1:556)
+    at <unknown> (.next/server/app/api/exchange/route.js:1:15990)
+    at b (.next/server/edge-runtime-webpack.js:1:1803)
+    at <unknown> (.next/server/app/api/exchange/route.js:1:51)
+ReferenceError: path is not defined
+    at <unknown> (.next/server/app/api/record-scar/route.js:1)
+    at 61942 (.next/server/app/api/record-scar/route.js:1:1154)
+    at c (.next/server/edge-runtime-webpack.js:1:143)
+    at <unknown> (.next/server/app/api/record-scar/route.js:1:11860)
+    at c.O (.next/server/edge-runtime-webpack.js:1:556)
+    at <unknown> (.next/server/app/api/record-scar/route.js:1:11882)
+    at b (.next/server/edge-runtime-webpack.js:1:1803)
+    at <unknown> (.next/server/app/api/record-scar/route.js:1:51)
+
+> Build error occurred
+[Error: Failed to collect page data for /api/exchange] { type: 'Error' }

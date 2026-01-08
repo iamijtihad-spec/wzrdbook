@@ -1,0 +1,27 @@
+
+> grit-dashboard@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.9
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 14.8s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+TypeError: Cannot read properties of undefined (reading '1')
+    at <unknown> (.next/server/app/api/admin/deploy-discord/route.js:1)
+    at 14215 (.next/server/app/api/admin/deploy-discord/route.js:1:2884)
+    at c (.next/server/edge-runtime-webpack.js:1:143)
+    at <unknown> (.next/server/app/api/admin/deploy-discord/route.js:1:13676)
+    at c.O (.next/server/edge-runtime-webpack.js:1:556)
+    at <unknown> (.next/server/app/api/admin/deploy-discord/route.js:1:13698)
+    at b (.next/server/edge-runtime-webpack.js:1:1803)
+    at <unknown> (.next/server/app/api/admin/deploy-discord/route.js:1:51)
+
+> Build error occurred
+[Error: Failed to collect page data for /api/admin/deploy-discord] {
+  type: 'Error'
+}

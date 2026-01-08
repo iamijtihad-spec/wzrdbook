@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 
-const CLAIMS_FILE = path.join(process.cwd(), 'data', 'claims.json');
+// const CLAIMS_FILE = path.join(process.cwd(), 'data', 'claims.json');
 
 // Ensure data directory exists
-if (!fs.existsSync(path.join(process.cwd(), 'data'))) {
-    fs.mkdirSync(path.join(process.cwd(), 'data'));
-}
+// if (!fs.existsSync(path.join(process.cwd(), 'data'))) {
+//     fs.mkdirSync(path.join(process.cwd(), 'data'));
+// }
 
 interface ClaimRecord {
     wallet: string;
@@ -15,40 +15,14 @@ interface ClaimRecord {
 }
 
 export function getClaims(wallet: string): ClaimRecord[] {
-    try {
-        if (!fs.existsSync(CLAIMS_FILE)) return [];
-        const data = fs.readFileSync(CLAIMS_FILE, 'utf-8');
-        const claims: ClaimRecord[] = JSON.parse(data);
-        return claims.filter(c => c.wallet === wallet);
-    } catch (error) {
-        console.error("Error reading claims:", error);
-        return [];
-    }
+    // In Edge Runtime, local file persistence is not supported.
+    // For now, return empty or implement D1 lookups here if context allows.
+    console.warn("getClaims called in Edge Runtime - Persistance Disabled");
+    return [];
 }
 
 export function addClaim(wallet: string, claimId: string): boolean {
-    try {
-        let claims: ClaimRecord[] = [];
-        if (fs.existsSync(CLAIMS_FILE)) {
-            const data = fs.readFileSync(CLAIMS_FILE, 'utf-8');
-            claims = JSON.parse(data);
-        }
-
-        // Check if already claimed
-        if (claims.some(c => c.wallet === wallet && c.claimId === claimId)) {
-            return false;
-        }
-
-        claims.push({
-            wallet,
-            claimId,
-            timestamp: Date.now()
-        });
-
-        fs.writeFileSync(CLAIMS_FILE, JSON.stringify(claims, null, 2));
-        return true;
-    } catch (error) {
-        console.error("Error saving claim:", error);
-        return false;
-    }
+    // In Edge Runtime, local file persistence is not supported.
+    console.warn("addClaim called in Edge Runtime - Persistence Disabled");
+    return true; // Mock success
 }

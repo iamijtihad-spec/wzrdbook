@@ -1,18 +1,18 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import { D1Client } from '../d1';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+// const DATA_DIR = path.join(process.cwd(), 'data');
 
-// Ensure data directory exists
-if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-}
+// // Ensure data directory exists
+// if (!fs.existsSync(DATA_DIR)) {
+//     fs.mkdirSync(DATA_DIR, { recursive: true });
+// }
 
 export class StorageEngine {
-    private static getFilePath(collection: string): string {
-        return path.join(DATA_DIR, `${collection}.json`);
-    }
+    // private static getFilePath(collection: string): string {
+    //     return path.join(DATA_DIR, `${collection}.json`);
+    // }
 
     /**
      * READ: Fetches data from D1 (SQL) or Local (JSON)
@@ -49,19 +49,21 @@ export class StorageEngine {
         }
 
         // 2. Local Fallback (JSON)
-        const filePath = this.getFilePath(collection);
-        if (!fs.existsSync(filePath)) {
-            await this.write(collection, defaultValue);
-            return defaultValue;
-        }
+        // const filePath = this.getFilePath(collection);
+        // if (!fs.existsSync(filePath)) {
+        //     await this.write(collection, defaultValue);
+        //     return defaultValue;
+        // }
 
-        try {
-            const data = fs.readFileSync(filePath, 'utf-8');
-            return JSON.parse(data) as T;
-        } catch (error) {
-            console.error(`Failed to read collection: ${collection}`, error);
-            return defaultValue;
-        }
+        // try {
+        //     const data = fs.readFileSync(filePath, 'utf-8');
+        //     return JSON.parse(data) as T;
+        // } catch (error) {
+        //     console.error(`Failed to read collection: ${collection}`, error);
+        //     return defaultValue;
+        // }
+        console.warn(`StorageEngine local read disabled (Edge): ${collection}`);
+        return defaultValue;
     }
 
     /**
@@ -76,13 +78,14 @@ export class StorageEngine {
         }
 
         // 2. Local Fallback (JSON)
-        const filePath = this.getFilePath(collection);
-        try {
-            fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-        } catch (error) {
-            console.error(`Failed to write collection: ${collection}`, error);
-            throw new Error(`Storage Write Error: ${collection}`);
-        }
+        // const filePath = this.getFilePath(collection);
+        // try {
+        //     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+        // } catch (error) {
+        //     console.error(`Failed to write collection: ${collection}`, error);
+        //     throw new Error(`Storage Write Error: ${collection}`);
+        // }
+        console.warn(`StorageEngine local write disabled (Edge): ${collection}`);
     }
 
     /**

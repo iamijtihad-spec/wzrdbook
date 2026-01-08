@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import { syncDiscordToDomain } from "@/scripts/discord/domain-manager";
-import { Client, GatewayIntentBits } from "discord.js";
+// import { syncDiscordToDomain } from "@/scripts/discord/domain-manager";
+// import { Client, GatewayIntentBits } from "discord.js";
 
 // Initialize Bot Client (Note: In Next.js serverless, maintaining a persistent WS connection is hard. 
 // Ideally, this webhook would talk to a separate running Bot process. 
@@ -9,7 +9,7 @@ import { Client, GatewayIntentBits } from "discord.js";
 
 // For the purposes of this specific task, we'll try to perform a "One-Shot" action if token is present, 
 // or mostly just log that we WOULD have done it.
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+// const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 export async function POST(req: NextRequest) {
     try {

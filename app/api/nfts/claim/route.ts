@@ -70,10 +70,10 @@ export async function POST(request: NextRequest) {
             } else {
                 throw new Error("Invalid TREASURY_SECRET format"); // Catch below
             }
-        } else {
+            // } else if (fs.existsSync(treasuryPath)) {
             //     const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
             //     treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
-            // }
+            // } 
         } else {
             return NextResponse.json(
                 { error: "Treasury wallet not configured (File or Env missing)" },

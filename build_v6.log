@@ -1,0 +1,110 @@
+
+> grit-dashboard@0.1.0 build
+> next build
+
+   ▲ Next.js 15.5.9
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 8.2s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+ ⚠ Using edge runtime on a page currently disables static generation for that page
+   Generating static pages (0/31) ...
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+   Generating static pages (7/31) 
+   Generating static pages (15/31) 
+bigint: Failed to load bindings, pure JS will be used (try npm run rebuild?)
+   Generating static pages (23/31) 
+ ✓ Generating static pages (31/31)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                    4.38 kB         311 kB
+├ ○ /_not-found                             1 kB         104 kB
+├ ○ /admin                               7.46 kB         314 kB
+├ ○ /admin/initiate-admin                5.94 kB         309 kB
+├ ƒ /api/admin/airdrop                     249 B         103 kB
+├ ƒ /api/admin/bounty/payout               249 B         103 kB
+├ ƒ /api/admin/deploy-discord              249 B         103 kB
+├ ƒ /api/admin/get-config                  249 B         103 kB
+├ ƒ /api/admin/ledger                      249 B         103 kB
+├ ƒ /api/admin/rings                       249 B         103 kB
+├ ƒ /api/admin/stats                       249 B         103 kB
+├ ƒ /api/admin/update-config               249 B         103 kB
+├ ƒ /api/auth/discord                      249 B         103 kB
+├ ƒ /api/auth/login                        249 B         103 kB
+├ ƒ /api/auth/logout                       249 B         103 kB
+├ ƒ /api/auth/register                     249 B         103 kB
+├ ƒ /api/auth/register-admin               249 B         103 kB
+├ ƒ /api/bank/balance                      249 B         103 kB
+├ ƒ /api/bank/deposit                      249 B         103 kB
+├ ƒ /api/bank/withdraw                     249 B         103 kB
+├ ƒ /api/bridge/release                    249 B         103 kB
+├ ƒ /api/chat                              249 B         103 kB
+├ ƒ /api/chi/balance                       249 B         103 kB
+├ ƒ /api/claim                             249 B         103 kB
+├ ƒ /api/config                            249 B         103 kB
+├ ƒ /api/creature/[mint]                   249 B         103 kB
+├ ƒ /api/data/proposals                    249 B         103 kB
+├ ƒ /api/data/user                         249 B         103 kB
+├ ƒ /api/discord/verify                    249 B         103 kB
+├ ƒ /api/discord/webhook                   249 B         103 kB
+├ ƒ /api/evolution/interact                249 B         103 kB
+├ ƒ /api/exchange                          249 B         103 kB
+├ ƒ /api/grit/balance                      249 B         103 kB
+├ ƒ /api/liquidity/stats                   249 B         103 kB
+├ ƒ /api/moxy/balance                      249 B         103 kB
+├ ƒ /api/music                             249 B         103 kB
+├ ƒ /api/music/stream/[mint]               249 B         103 kB
+├ ƒ /api/nfts/claim                        249 B         103 kB
+├ ƒ /api/nfts/list                         249 B         103 kB
+├ ƒ /api/nfts/owned                        249 B         103 kB
+├ ƒ /api/nfts/purchase                     249 B         103 kB
+├ ƒ /api/progeny/mint                      249 B         103 kB
+├ ƒ /api/record-scar                       249 B         103 kB
+├ ƒ /api/reward                            249 B         103 kB
+├ ƒ /api/rewards/stream                    249 B         103 kB
+├ ƒ /api/sol/balance                       249 B         103 kB
+├ ƒ /api/staking/deposit                   249 B         103 kB
+├ ƒ /api/staking/stats                     249 B         103 kB
+├ ƒ /api/staking/withdraw                  249 B         103 kB
+├ ƒ /api/verify                            249 B         103 kB
+├ ƒ /api/verify-nfc                        249 B         103 kB
+├ ƒ /api/withdraw                          249 B         103 kB
+├ ○ /bonding                             4.34 kB         312 kB
+├ ○ /bounties                            7.93 kB         311 kB
+├ ○ /bridge                              6.22 kB         309 kB
+├ ○ /claim                               2.27 kB         315 kB
+├ ○ /console                             8.32 kB         306 kB
+├ ○ /contact                             2.47 kB         145 kB
+├ ○ /domain/ascesis                      12.1 kB         324 kB
+├ ○ /domain/heritage                     11.4 kB         327 kB
+├ ○ /domain/market                       5.82 kB         309 kB
+├ ○ /domain/sovereign                    5.01 kB         318 kB
+├ ○ /domain/voice                        2.24 kB         308 kB
+├ ○ /exchange                            5.09 kB         308 kB
+├ ○ /guide                               5.05 kB         308 kB
+├ ○ /liquidity                           4.62 kB         307 kB
+├ ○ /live                                4.16 kB         313 kB
+├ ○ /login                               4.09 kB         307 kB
+├ ○ /merch                               4.99 kB         264 kB
+├ ○ /museum                              4.53 kB         317 kB
+├ ○ /register                            7.03 kB         310 kB
+├ ○ /rings                               1.53 kB         308 kB
+├ ƒ /rings/[id]                          5.15 kB         321 kB
+├ ○ /staking                             4.88 kB         328 kB
+├ ○ /universe                            5.25 kB         308 kB
+├ ○ /verify                              5.99 kB         309 kB
+└ ○ /vote                                6.88 kB         310 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/1255-8befde0980f5cba9.js      45.6 kB
+  ├ chunks/4bd1b696-100b9d70ed4e49c1.js  54.2 kB
+  └ other shared chunks (total)          3.35 kB
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

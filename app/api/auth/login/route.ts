@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { D1Client } from "@/lib/d1";
-import crypto from "crypto";
+
 
 export async function POST(req: NextRequest) {
     try {
@@ -13,8 +13,11 @@ export async function POST(req: NextRequest) {
         const env = (process as any).env;
         let account: any;
 
-        // 1. Hash Password
-        const passwordHash = crypto.createHash('sha256').update(password).digest('hex');
+        // 1. Hash Password (Web Crypto)
+        const encoder = new TextEncoder();
+        const data = encoder.encode(password);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+        const passwordHash = Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
 
         // 2. Query Account
         if (env?.DB) {

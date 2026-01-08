@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 
 // Local Persistence Layer
-const DB_PATH = path.join(process.cwd(), "ecosystem_db.json");
+// const DB_PATH = path.join(process.cwd(), "ecosystem_db.json");
 
 export async function POST(req: NextRequest) {
     try {
