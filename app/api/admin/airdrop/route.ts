@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Connection, Keypair, PublicKey, Transaction, clusterApiUrl } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getMint } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
+
 
 // Configuration
 const MINTS = {
@@ -21,9 +20,8 @@ export async function POST(request: NextRequest) {
 
         const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-        // LOAD TREASURY (Priority: Env -> File)
+        // LOAD TREASURY (Priority: Env Only)
         let treasury: Keypair;
-        const treasuryPath = path.join(process.cwd(), "scripts/dev-wallet.json");
 
         if (process.env.TREASURY_SECRET) {
             const secret = process.env.TREASURY_SECRET;
@@ -32,11 +30,8 @@ export async function POST(request: NextRequest) {
             } else {
                 return NextResponse.json({ success: false, error: "Invalid TREASURY_SECRET format" }, { status: 500 });
             }
-        } else if (fs.existsSync(treasuryPath)) {
-            const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
-            treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
         } else {
-            return NextResponse.json({ success: false, error: "Treasury not configured (File or Env missing)" }, { status: 500 });
+            return NextResponse.json({ success: false, error: "Treasury not configured (Env missing)" }, { status: 500 });
         }
 
         // RESOLVE MINT
@@ -60,15 +55,14 @@ export async function POST(request: NextRequest) {
         const treasuryATA = await getAssociatedTokenAddress(mintPubkey, treasury.publicKey);
         const recipientATA = await getAssociatedTokenAddress(mintPubkey, recipientPubkey);
 
-        const debugLog = `
+        console.log(`
 TIMESTAMP: ${new Date().toISOString()}
 Treasury: ${treasury.publicKey.toBase58()}
 Mint: ${mintPubkey.toBase58()}
 Treasury ATA: ${treasuryATA.toBase58()}
 Recipient ATA: ${recipientATA.toBase58()}
 ----------------------------------------
-`;
-        fs.appendFileSync(path.join(process.cwd(), "airdrop_debug.log"), debugLog);
+`);
 
         const transferTx = new Transaction();
 

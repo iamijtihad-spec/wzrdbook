@@ -2,8 +2,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Connection, PublicKey, Transaction, clusterApiUrl, Keypair } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getAccount } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
 import { ServerLedger } from "@/lib/server-ledger";
 
 export async function POST(request: NextRequest) {
@@ -24,12 +22,8 @@ export async function POST(request: NextRequest) {
 
         // --- LOAD TREASURY ---
         let treasury: Keypair;
-        const treasuryPath = path.join(process.cwd(), "scripts/dev-wallet.json");
         if (process.env.TREASURY_SECRET) {
             treasury = Keypair.fromSecretKey(Uint8Array.from(JSON.parse(process.env.TREASURY_SECRET)));
-        } else if (fs.existsSync(treasuryPath)) {
-            const secret = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
-            treasury = Keypair.fromSecretKey(new Uint8Array(secret));
         } else {
             return NextResponse.json({ error: "Treasury configuration missing" }, { status: 500 });
         }
