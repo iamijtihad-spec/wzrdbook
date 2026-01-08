@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from 'fs';
-import path from 'path';
+
 import ringsConfig from "@/config/rings.json";
 
 export async function POST(req: NextRequest) {
@@ -22,11 +21,10 @@ export async function POST(req: NextRequest) {
         // In a real app we would validate content structure
         ringsConfig.rings[ringIndex].content.push(content);
 
-        // 4. Persist to File (Serverside)
-        // Note: This relies on the environment allowing writes (Localhost yes, Vercel no)
-        // For Vercel, this would need to update a DB. We assume local/dev environment here.
-        const configPath = path.join(process.cwd(), 'config', 'rings.json');
-        fs.writeFileSync(configPath, JSON.stringify(ringsConfig, null, 4));
+        // 4. Persist (Disabled for Edge)
+        // const configPath = path.join(process.cwd(), 'config', 'rings.json');
+        // fs.writeFileSync(configPath, JSON.stringify(ringsConfig, null, 4));
+        console.warn("Persistence disabled in Edge Runtime: rings.json not updated on disk.");
 
         return NextResponse.json({ success: true, ringId });
     } catch (e: unknown) {
