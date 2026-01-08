@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Connection, PublicKey, Transaction, clusterApiUrl, Keypair } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getMint } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
+
 
 const GRIT_MINT = "CS8ZQMdJ5t5hNuM51LXJBU4zBysZWAkFj9oJ6MwtnHsS";
 
@@ -45,16 +44,19 @@ export async function POST(request: NextRequest) {
         const connection = new Connection(clusterApiUrl("devnet"));
 
         // Load treasury wallet
-        const treasuryPath = path.join(process.cwd(), "scripts", "dev-wallet.json");
-        if (!fs.existsSync(treasuryPath)) {
+        // Load treasury wallet
+        // const treasuryPath = path.join(process.cwd(), "scripts", "dev-wallet.json");
+        let treasury: Keypair;
+
+        if (process.env.TREASURY_SECRET) {
+            const secret = JSON.parse(process.env.TREASURY_SECRET);
+            treasury = Keypair.fromSecretKey(Uint8Array.from(secret));
+        } else {
             return NextResponse.json(
-                { error: "Treasury wallet not configured" },
+                { error: "Treasury wallet not configured in Env" },
                 { status: 500 }
             );
         }
-
-        const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
-        const treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
 
         // Verify payment signature
         const tx = await connection.getTransaction(signature, {

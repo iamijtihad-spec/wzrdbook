@@ -2,9 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { S3Client, GetObjectCommand } from "@aws-sdk/client-s3";
 import { getTrackByMint } from "@/lib/nft-config";
 import { scanLocalAudio } from "@/lib/server/audio-scanner";
-import fs from "fs";
-import path from "path";
-import { Readable } from "stream";
 
 // Initialize R2 Client
 const R2_CONFIG = {
@@ -49,33 +46,10 @@ export async function GET(
         }
 
         // --- LOCAL TRACK HANDLING ---
+        // Edge Runtime cannot stream local files from disk.
+        // We only support R2 or externally hosted URLs in this mode.
         if (mint.startsWith("local-")) {
-            const localTracks = scanLocalAudio();
-            const localTrack = localTracks.find(t => t.mint === mint);
-
-            if (!localTrack) {
-                return new NextResponse("Local track not found in scan", { status: 404 });
-            }
-
-            const filePath = path.join(process.cwd(), 'music_uploads', localTrack.audioFile);
-            if (!fs.existsSync(filePath)) {
-                return new NextResponse("File not found on server", { status: 404 });
-            }
-
-            const stats = fs.statSync(filePath);
-            const stream = fs.createReadStream(filePath);
-            const webStream = nodeStreamToIterator(stream);
-
-            const contentType = localTrack.audioFile.endsWith(".mp3") ? "audio/mpeg" : "audio/wav";
-
-            return new NextResponse(webStream, {
-                headers: {
-                    "Content-Type": contentType,
-                    "Content-Length": stats.size.toString(),
-                    "Cache-Control": "no-cache",
-                    "Accept-Ranges": "bytes",
-                },
-            });
+            return new NextResponse("Local file streaming not supported in Edge Runtime. Please upload to R2.", { status: 400 });
         }
         // -----------------------------
 

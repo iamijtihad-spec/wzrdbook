@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+
 
 // Local Persistence Layer
 const DB_PATH = path.join(process.cwd(), "ecosystem_db.json");
@@ -18,18 +17,10 @@ export async function POST(req: NextRequest) {
         });
 
         // 1. Read Database
-        let db = { scars: [] };
-        try {
-            if (fs.existsSync(DB_PATH)) {
-                const fileContent = fs.readFileSync(DB_PATH, "utf-8");
-                const json = JSON.parse(fileContent);
-                db = { ...json, scars: json.scars || [] };
-            }
-        } catch (e) {
-            console.error("Failed to read DB, initializing new.", e);
-        }
+        // let db = { scars: [] };
+        console.warn("Scar recording persistence disabled in Edge Runtime");
 
-        // 2. Append Scar
+        // 2. Append Scar (Mock)
         const newScar = {
             id: Date.now().toString(),
             wallet,
@@ -40,11 +31,8 @@ export async function POST(req: NextRequest) {
             timestamp: Date.now()
         };
 
-        // @ts-ignore
-        db.scars.push(newScar);
-
-        // 3. Save Database
-        fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+        // 3. Save Database (Disabled)
+        // fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
 
         return NextResponse.json({ success: true, scarId: newScar.id });
 

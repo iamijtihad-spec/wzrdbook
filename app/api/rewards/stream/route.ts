@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Connection, Keypair, PublicKey, Transaction, clusterApiUrl } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getMint } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
+
 
 // Config
 const GRIT_MINT = process.env.GRIT_MINT || "CS8ZQMdJ5t5hNuM51LXJBU4zBysZWAkFj9oJ6MwtnHsS";
@@ -23,21 +22,19 @@ export async function POST(request: NextRequest) {
 
         // 1. Load Treasury Wallet
         // Logic adapted from scripts/airdrop_grit.js
-        const treasuryPath = path.join(process.cwd(), "scripts", "dev-wallet.json");
-
         let treasury: Keypair;
         let isSimulation = false;
 
-        if (fs.existsSync(treasuryPath)) {
+        if (process.env.TREASURY_SECRET) {
             try {
-                const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
+                const secretKey = JSON.parse(process.env.TREASURY_SECRET);
                 treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
             } catch (e) {
-                console.error("Failed to load treasury wallet:", e);
+                console.error("Failed to load treasury wallet from Env:", e);
                 isSimulation = true;
             }
         } else {
-            console.warn("Treasury wallet not found. Running in SIMULATION mode.");
+            console.warn("Treasury wallet (TREASURY_SECRET) not found. Running in SIMULATION mode.");
             isSimulation = true;
         }
 

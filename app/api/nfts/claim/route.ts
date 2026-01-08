@@ -2,8 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Connection, PublicKey, Transaction, clusterApiUrl, Keypair } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getAccount } from "@solana/spl-token";
 import { getNFTPrices } from "@/lib/nft-config";
-import fs from "fs";
-import path from "path";
+
 
 const GRIT_MINT = "CS8ZQMdJ5t5hNuM51LXJBU4zBysZWAkFj9oJ6MwtnHsS";
 
@@ -71,9 +70,10 @@ export async function POST(request: NextRequest) {
             } else {
                 throw new Error("Invalid TREASURY_SECRET format"); // Catch below
             }
-        } else if (fs.existsSync(treasuryPath)) {
-            const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
-            treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
+        } else {
+            //     const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
+            //     treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
+            // }
         } else {
             return NextResponse.json(
                 { error: "Treasury wallet not configured (File or Env missing)" },

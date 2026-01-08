@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Connection, Keypair, PublicKey, Transaction, clusterApiUrl } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createAssociatedTokenAccountInstruction, createTransferInstruction, getMint } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
+
 
 // Configuration
 const RECIPIENT_WALLET = "FycgQBYygUY6ZDk3QHPQi9t468VTfTDXTNRRpYkTj3Tr";
@@ -43,23 +42,28 @@ export async function POST(request: NextRequest) {
         // We'll trust the amount passed matches logic for now but verify signature hasn't been used.
 
         // 2. Check Ledger for Replay
-        let ledger: any[] = [];
-        if (fs.existsSync(LEDGER_PATH)) {
-            ledger = JSON.parse(fs.readFileSync(LEDGER_PATH, "utf-8"));
-        }
+        // const ledger: any[] = [];
+        // if (fs.existsSync(LEDGER_PATH)) {
+        //     ledger = JSON.parse(fs.readFileSync(LEDGER_PATH, "utf-8"));
+        // }
 
-        if (ledger.find((entry: any) => entry.signature === signature)) {
-            return NextResponse.json({ success: false, message: "Transaction already processed" }, { status: 400 });
-        }
+        // if (ledger.find((entry: any) => entry.signature === signature)) {
+        //     return NextResponse.json({ success: false, message: "Transaction already processed" }, { status: 400 });
+        // }
+
+        // Ledger disabled in Edge Runtime
+        console.warn("Ledger replay check skipped in Edge Runtime");
 
         // 3. Send GRIT
-        const treasuryPath = path.join(process.cwd(), "scripts/dev-wallet.json");
-        if (!fs.existsSync(treasuryPath)) {
-            return NextResponse.json({ success: false, message: "Treasury wallet not configured" }, { status: 500 });
-        }
+        // const treasuryPath = path.join(process.cwd(), "scripts/dev-wallet.json");
+        let treasury: Keypair;
 
-        const secretKey = JSON.parse(fs.readFileSync(treasuryPath, "utf-8"));
-        const treasury = Keypair.fromSecretKey(new Uint8Array(secretKey));
+        if (process.env.TREASURY_SECRET) {
+            const secret = JSON.parse(process.env.TREASURY_SECRET);
+            treasury = Keypair.fromSecretKey(Uint8Array.from(secret));
+        } else {
+            return NextResponse.json({ success: false, message: "Treasury wallet not configured (Env)" }, { status: 500 });
+        }
 
         const mintPubkey = new PublicKey(GRIT_MINT);
         const recipientPubkey = new PublicKey(userPublicKey);
@@ -109,12 +113,13 @@ export async function POST(request: NextRequest) {
             transferSignature: transferSignature // Outgoing GRIT tx
         };
 
-        ledger.push(newEntry);
+        // ledger.push(newEntry);
         // Ensure dir exists
-        const dir = path.dirname(LEDGER_PATH);
-        if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+        // const dir = path.dirname(LEDGER_PATH);
+        // if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 
-        fs.writeFileSync(LEDGER_PATH, JSON.stringify(ledger, null, 2));
+        // fs.writeFileSync(LEDGER_PATH, JSON.stringify(ledger, null, 2));
+        console.warn("Ledger write skipped in Edge Runtime: ", newEntry);
 
         return NextResponse.json({ success: true, gritAmount, transferSignature });
 

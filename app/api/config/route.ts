@@ -1,18 +1,8 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import artistConfig from '@/config/artist.config.json';
 
 export async function GET() {
-    try {
-        const configPath = path.join(process.cwd(), 'artist.config.json');
-        const fileContents = await fs.readFile(configPath, 'utf8');
-        const config = JSON.parse(fileContents);
-
-        return NextResponse.json(config);
-    } catch (error) {
-        console.error("Failed to load artist config:", error);
-        return NextResponse.json({ error: "Failed to load configuration" }, { status: 500 });
-    }
+    return NextResponse.json(artistConfig);
 }
 
 

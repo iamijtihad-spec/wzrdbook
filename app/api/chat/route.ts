@@ -1,39 +1,22 @@
 
 import { NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
 
-const CHAT_FILE = path.join(process.cwd(), "data", "chat.json");
 
-// Ensure data exists
-if (!fs.existsSync(CHAT_FILE)) {
-    fs.mkdirSync(path.dirname(CHAT_FILE), { recursive: true });
-    fs.writeFileSync(CHAT_FILE, JSON.stringify([]));
-}
+// In-memory chat for Edge Runtime (resets on cold start)
+// For production, this should swap to Cloudflare D1 or KV
+const chatMemory: any[] = [];
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
-    try {
-        const fileContent = fs.readFileSync(CHAT_FILE, "utf-8");
-        const chat = JSON.parse(fileContent);
-        // Return last 50 messages
-        return NextResponse.json({ success: true, messages: chat.slice(-50) });
-    } catch (e) {
-        return NextResponse.json({ success: false, messages: [] });
-    }
+    // Return last 50 messages
+    return NextResponse.json({ success: true, messages: chatMemory.slice(-50) });
 }
 
 export async function POST(req: Request) {
     try {
         const body = await req.json();
         const { username, content, avatar, channel, timestamp } = body;
-
-        let chat = [];
-        if (fs.existsSync(CHAT_FILE)) {
-            const data = fs.readFileSync(CHAT_FILE, "utf-8");
-            chat = JSON.parse(data);
-        }
 
         const newMessage = {
             id: Date.now().toString(),
@@ -44,14 +27,12 @@ export async function POST(req: Request) {
             timestamp: timestamp || Date.now()
         };
 
-        chat.push(newMessage);
+        chatMemory.push(newMessage);
 
         // Cap at 100
-        if (chat.length > 100) {
-            chat = chat.slice(chat.length - 100);
+        if (chatMemory.length > 100) {
+            chatMemory.splice(0, chatMemory.length - 100);
         }
-
-        fs.writeFileSync(CHAT_FILE, JSON.stringify(chat, null, 2));
 
         return NextResponse.json({ success: true });
     } catch (e) {

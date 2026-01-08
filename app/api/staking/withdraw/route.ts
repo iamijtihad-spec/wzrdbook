@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 import { Connection, Keypair, PublicKey, Transaction, sendAndConfirmTransaction } from "@solana/web3.js";
 import { getAssociatedTokenAddress, createTransferInstruction, getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
-import fs from "fs";
-import path from "path";
+
 
 // Initialize Connection
 const connection = new Connection(process.env.NEXT_PUBLIC_SOLANA_RPC_URL || "https://api.devnet.solana.com", "confirmed");
@@ -71,12 +70,16 @@ export async function POST(req: Request) {
         }
 
         // 3. Initiate Blockchain Transfer (Treasury -> User)
-        const secretPath = path.join(process.cwd(), "secrets/staking-wallet.json");
-        if (!fs.existsSync(secretPath)) {
-            throw new Error("Treasury Wallet not found on server");
+        // const secretPath = path.join(process.cwd(), "secrets/staking-wallet.json");
+        let treasuryKeypair: Keypair;
+
+        if (process.env.STAKING_WALLET_SECRET) {
+            const secret = JSON.parse(process.env.STAKING_WALLET_SECRET);
+            treasuryKeypair = Keypair.fromSecretKey(Uint8Array.from(secret));
+        } else {
+            // Fallback or Error
+            throw new Error("Staking Wallet not configured in Environment");
         }
-        const secret = JSON.parse(fs.readFileSync(secretPath, "utf-8"));
-        const treasuryKeypair = Keypair.fromSecretKey(Uint8Array.from(secret));
 
         // Get ATAs
         const fromAta = await getOrCreateAssociatedTokenAccount(
